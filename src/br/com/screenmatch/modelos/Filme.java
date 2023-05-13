@@ -1,27 +1,62 @@
+package br.com.screenmatch.modelos;
 
 public class Filme {
-    String nome;
-    int anoDelancamento;
-    boolean incluidoNoPlano;
+    private String nome;
+    private int anoDelancamento;
+    private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
-    int duracaoEmMinutos;
+    private int duracaoEmMinutos;
 
-    int getTotalDeAvaliacoes(){
+    public String getNome() {
+        return nome;
+    }
+
+    public int getAnoDelancamento() {
+        return anoDelancamento;
+    }
+
+    public boolean isIncluidoNoPlano() {
+        return incluidoNoPlano;
+    }
+
+    public int getDuracaoEmMinutos() {
+        return duracaoEmMinutos;
+    }
+
+    public int getTotalDeAvaliacoes(){
         return totalDeAvaliacoes;
     }
-    void exibeFichaTecnica() {
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setAnoDelancamento(int anoDelancamento) {
+        this.anoDelancamento = anoDelancamento;
+    }
+
+    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+        this.incluidoNoPlano = incluidoNoPlano;
+    }
+
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+        this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+
+    public void exibeFichaTecnica() {
         System.out.println("Nome do Filme: " + nome);
         System.out.println("Ano de Lançamento: " + anoDelancamento);
         System.out.println("Duração do Filme: " + duracaoEmMinutos);
+        System.out.println("Incluido no Plano: " + incluidoNoPlano);
 
 
     }
-    void avalia(double nota) {
+    public void avalia(double nota) {
         somaDasAvaliacoes += nota;
         totalDeAvaliacoes++;
     }
-    double pegaMedia() {
+    public double pegaMedia() {
     return somaDasAvaliacoes / totalDeAvaliacoes;
     }
 }
